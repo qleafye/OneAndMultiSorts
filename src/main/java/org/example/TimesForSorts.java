@@ -6,7 +6,7 @@ public class TimesForSorts {
     static Map<String, List<Integer>> OneThreadTimeMid() {
         Random random = new Random();
         List<Integer> arraySizes = new ArrayList<>();
-        for (int i = 10000; i <= 1000000; i += 50000) {
+        for (int i = 500000; i <= 10_000_000; i += 500000) {
             arraySizes.add(i);
         }
 
@@ -28,7 +28,7 @@ public class TimesForSorts {
 
 
             startTime = System.nanoTime();
-            OneThreadSorts.mergeSort(randomArray.clone());
+            OneThreadSorts.mergeSort(randomArray.clone(), randomArray.length);
             endTime = System.nanoTime();
             duration = (endTime - startTime) / 1000;
             sortTimes.computeIfAbsent("Merge Mid", k -> new ArrayList<>()).add((int) duration);
@@ -46,7 +46,7 @@ public class TimesForSorts {
     static Map<String, List<Integer>> OneThreadTimeBest() {
         Random random = new Random();
         List<Integer> arraySizes = new ArrayList<>();
-        for (int i = 10000; i <= 1000000; i += 50000) {
+        for (int i = 500000; i <= 10000000; i += 500000) {
             arraySizes.add(i);
         }
 
@@ -70,7 +70,7 @@ public class TimesForSorts {
 
 
             startTime = System.nanoTime();
-            OneThreadSorts.mergeSort(randomArray.clone());
+            OneThreadSorts.mergeSort(randomArray.clone(),randomArray.length);
             endTime = System.nanoTime();
             duration = (endTime - startTime) / 1000;
             sortTimes.computeIfAbsent("Merge Best", k -> new ArrayList<>()).add((int) duration);
@@ -87,7 +87,7 @@ public class TimesForSorts {
     static Map<String, List<Integer>> OneThreadTimeWorst() {
         Random random = new Random();
         List<Integer> arraySizes = new ArrayList<>();
-        for (int i = 10000; i <= 1000000; i += 50000) {
+        for (int i = 500000; i <= 10000000; i += 500000) {
             arraySizes.add(i);
         }
 
@@ -119,7 +119,7 @@ public class TimesForSorts {
 
 
             startTime = System.nanoTime();
-            OneThreadSorts.mergeSort(randomArray.clone());
+            OneThreadSorts.mergeSort(randomArray.clone(),randomArray.length);
             endTime = System.nanoTime();
             duration = (endTime - startTime) / 1000;
             sortTimes.computeIfAbsent("Merge Worst", k -> new ArrayList<>()).add((int) duration);
@@ -137,7 +137,7 @@ public class TimesForSorts {
     static Map<String, List<Integer>> MultiThreadTimeMid() {
         Random random = new Random();
         List<Integer> arraySizes = new ArrayList<>();
-        for (int i = 10000; i <= 1000000; i += 50000) {
+        for (int i = 500000; i <= 10000000; i += 500000) {
             arraySizes.add(i);
         }
 
@@ -184,7 +184,7 @@ public class TimesForSorts {
     static Map<String, List<Integer>> MultiThreadTimeBest() {
         Random random = new Random();
         List<Integer> arraySizes = new ArrayList<>();
-        for (int i = 10000; i <= 1000000; i += 50000) {
+        for (int i = 500000; i <= 10000000; i += 500000) {
             arraySizes.add(i);
         }
 
@@ -196,7 +196,7 @@ public class TimesForSorts {
                 randomArray[i] = random.nextInt(1000000);
             }
 
-            OneThreadSorts.mergeSort(randomArray); //сортируем
+            OneThreadSorts.mergeSort(randomArray,0); //сортируем
 
 
             long startTime = System.nanoTime();
@@ -229,7 +229,7 @@ public class TimesForSorts {
     static Map<String, List<Integer>> MultiThreadTimeWorst() {
         Random random = new Random();
         List<Integer> arraySizes = new ArrayList<>();
-        for (int i = 10000; i <= 1000000; i += 50000) {
+        for (int i = 500000; i <= 10000000; i += 500000) {
             arraySizes.add(i);
         }
 

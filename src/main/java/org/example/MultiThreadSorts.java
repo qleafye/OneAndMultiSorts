@@ -156,25 +156,6 @@ public class MultiThreadSorts {
         }
     }
 
-    public static void main(String[] args) {
-        int[] array = {38, 27, 43, 3, 9, 82, 10};
-
-        // MergeSort
-        ForkJoinPool pool = new ForkJoinPool();
-        int[] mergeSortArray = array.clone();
-        MergeSortTask mergeSortTask = new MergeSortTask(mergeSortArray, 0, mergeSortArray.length - 1);
-        pool.invoke(mergeSortTask);
-        System.out.println("MergeSort: " + Arrays.toString(mergeSortArray));
-
-        // QuickSort
-        int[] quickSortArray = array.clone();
-        QuickSortTask quickSortTask = new QuickSortTask(quickSortArray, 0, quickSortArray.length - 1);
-        pool.invoke(quickSortTask);
-        System.out.println("QuickSort: " + Arrays.toString(quickSortArray));
-
-        // ShellSort
-        int[] shellSortArray = array.clone();
-        shellSort(shellSortArray, 4); // Using 4 threads
-        System.out.println("ShellSort: " + Arrays.toString(shellSortArray));
-    }
 }
+
+
