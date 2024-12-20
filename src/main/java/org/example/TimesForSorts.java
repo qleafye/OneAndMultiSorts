@@ -1,7 +1,7 @@
 package org.example;
 import java.util.*;
 import java.util.concurrent.ForkJoinPool;
-
+//asdsa
 public class TimesForSorts {
     static Map<String, List<Integer>> OneThreadTimeMid() {
         Random random = new Random();

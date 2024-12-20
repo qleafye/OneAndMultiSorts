@@ -1,5 +1,5 @@
 package org.example;
-
+//asdsa
 public class OneThreadSorts {
     static void mergeSort(int[] a, int n) {
         if (n < 2) {
